@@ -17,7 +17,7 @@ jobs:
       - name: Change to working directory
         run: cd ${{ github.workspace }}
       - name: Compile file
-        run: clang++ Object.cpp;
+        run: clang++ test.cpp Object.cpp;
       - name: Attempt to run results
         run: ./a.out;
       - run: echo "🍏 This job's status is ${{ job.status }}."
