@@ -14,8 +14,10 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      - name: Compile predetermined cpp file
-        run: cd ${{ github.workspace }};
-             clang++ Object.cpp;
-             ./a.out;
+      - name: Change to working directory
+        run: cd ${{ github.workspace }}
+      - name: Compile file
+        run: clang++ Object.cpp;
+      - name: Attempt to run results
+        run: ./a.out;
       - run: echo "🍏 This job's status is ${{ job.status }}."
